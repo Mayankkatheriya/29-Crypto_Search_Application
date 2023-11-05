@@ -21,7 +21,7 @@ async function windowload() {
         let div = document.createElement("div")
         div.classList.add("coin")
         div.innerHTML = `
-        <img src="${coin.item.thumb}" alt="">
+        <img src="${coin.item.thumb}" alt="" class = "coin-logo">
         <div class="details">
             <h1>${coin.item.name} (${coin.item.symbol})</h1>
             <p>₹ ${coinPrice}</p>
