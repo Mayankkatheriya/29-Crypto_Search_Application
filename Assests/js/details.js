@@ -1,8 +1,9 @@
+//TODO getting parameters from location.href and them using it fetching data from API
 function loadDetail() {
-    const url_string = window.location.href;
-    const url_obj = new URL(url_string);
-    const params = new URLSearchParams(url_obj.search);
-  
+    // const url_string = window.location.href;
+    // const url_obj = new URL(url_string);
+    // const params = new URLSearchParams(url_obj.search);
+    const params = new URLSearchParams(location.search)
     if(!params.has('id')) {
       window.location.href = "./index.html";
     }

@@ -1,17 +1,21 @@
 let trendingCoins = document.querySelector(".top-coins");
 
+
+//TODO Gives the btc price to calculate the each coin's price in ruppes
 async function btcPriceFunc() {
     const data = await fetchData("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr")
     const btcPrice =  data.bitcoin.inr;
     return btcPrice
 }
 
+//Todo fetch data from API
 async function fetchData(url) {
     let data = await fetch(url)
     data = data.json();
     return data;
 }
 
+//TODO display them on UI on window onload
 async function windowload() {
     const btcPrice = await btcPriceFunc()
     const allTrendingUrl = "https://api.coingecko.com/api/v3/search/trending";
@@ -26,7 +30,6 @@ async function windowload() {
             <h1>${coin.item.name} (${coin.item.symbol})</h1>
             <p>₹ ${coinPrice}</p>
         </div>`
-        console.log(div);
         trendingCoins.appendChild(div);
     });
 }
